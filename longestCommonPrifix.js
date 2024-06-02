@@ -1,4 +1,4 @@
-let array = ['flower','flow','fght']
+let array = ['flower','flowght','flow']
 let smallest_len = Infinity
 for(let i of array){
     if(i.length < smallest_len){
@@ -15,6 +15,7 @@ for(let j=0;j<smallest_len;j++){
             if(prifix !== word_prifix){
                 prifix = prifix.slice(0,prifix.length-1)
                 n+=1
+                break
             }
         }
     }
