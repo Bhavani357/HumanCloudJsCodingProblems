@@ -20,5 +20,5 @@ function stringToInteger(str) {
     }
     return isNegative ? -result : result;
 }
-const str1 = "123";
+const str1 = "-123";
 console.log(stringToInteger(str1)); 

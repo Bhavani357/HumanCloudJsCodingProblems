@@ -17,5 +17,5 @@ function combinationSum(candidates, target) {
     return result;
 }
 const array = [2, 3, 6, 7];
-const target = 7;
+const target = 8;
 console.log(combinationSum(array, target)); 
