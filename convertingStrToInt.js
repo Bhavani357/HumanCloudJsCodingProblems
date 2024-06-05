@@ -1,24 +1,8 @@
-function stringToInteger(str) {
-    str = str.trim();
-    if (str.length === 0) return NaN; 
-    let isNegative = false;
-    let index = 0;
-    let result = 0;
-    if (str[index] === '-') {
-        isNegative = true;
-        index++;
-    } else if (str[index] === '+') {
-        index++;
-    }
-    while (index < str.length) {
-        const char = str.charCodeAt(index);
-        if (char < 48 || char > 57) { 
-            break; 
-        }
-        result = result * 10 + (char - 48); 
-        index++;
-    }
-    return isNegative ? -result : result;
+const str = '234'
+let result = 0
+for(let i in str){
+    let unicode = str.charCodeAt(i)
+    // console.log(unicode-48)
+    result = result * 10 + (unicode-48)
 }
-const str1 = "-123";
-console.log(stringToInteger(str1)); 
+console.log(`Type of input: ${typeof result}`)
