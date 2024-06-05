@@ -1,21 +1,30 @@
-function combinationSum(candidates, target) {
-    const result = [];
-    function backtrack(remaining, start, path) {
-        if (remaining < 0) return;
-        if (remaining === 0) {
-            result.push([...path]);
-            return;
-        }
-        for (let i = start; i < candidates.length; i++) {
-            path.push(candidates[i]); 
-            backtrack(remaining - candidates[i], i, path); 
-            path.pop(); 
+
+const array = [2, 3, 6, 7,8];
+const target = 8;
+let count =1
+let newArray = []
+for(let i=0;i<array.length+1;i++){
+    for(let j=0;j<target;j++){
+        if((array[i]*count)<=target){
+            newArray.push(array[i])
+            count += 1
+        }else{
+            count = 1
+            break
         }
     }
-
-    backtrack(target, 0, []);
-    return result;
 }
-const array = [2, 3, 6, 7];
-const target = 8;
-console.log(combinationSum(array, target)); 
+console.log(newArray)
+let output = []
+let length = newArray.length
+for(let i=0;i<length;i++){
+    for(let j=1;j<length;j++){
+        let combination = newArray.slice(i,j+1)
+        let sum = combination.reduce((acc,curr)=>acc+curr,0)
+        if(sum === target){
+            output.push(combination)
+        }
+    }
+    
+}
+console.log(output)
