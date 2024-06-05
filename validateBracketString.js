@@ -1,31 +1,24 @@
-const string = "({}[])"
 
-let result = true
-for(let i=0;i<string.length-1;i++){
-    if(string[i]==="("){
-        if(string[i+1]===")"){
-
-            continue
+function checkIsValid(string){
+    const obj = {
+        '(':')',
+        '[':']',
+        '{':'}'
+    }
+    const newArray = []
+    for(let i=0;i<string.length;i++){
+        const charector = string[i]
+        if(obj[charector]){
+            newArray.push(charector)
         }else{
-            result = false
-            break
-        }
-    }else if(string[i]==="{"){
-        if(string[i+1]==="}"){
-
-            continue
-        }else{
-            result = false
-            break
-        }
-    }else if(string[i]==="["){
-        if(string[i+1]==="]"){
-
-            continue
-        }else{
-            result = false
-            break
+            let top= newArray.pop()
+            if(obj[top] !== charector){
+                return false
+            }
         }
     }
+    return newArray.length === 0;
 }
+const string = "({}[])"
+const result = checkIsValid(string)
 console.log(result)
