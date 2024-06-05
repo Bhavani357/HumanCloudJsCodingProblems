@@ -1,10 +1,8 @@
-const string = "abcd" 
+const string = "abcabc" 
 let maxSubArrayCount = 0 
 for(let i=0;i<string.length;i++){
     for(let j=i+1;j<string.length;j++){
         let subString = string.slice(i,j+1)
-
-        // console.log(subString)
         let setSubString = new Set(subString)
         if(subString.length === setSubString.size){
             if(maxSubArrayCount < setSubString.size){
