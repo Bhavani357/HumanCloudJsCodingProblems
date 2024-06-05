@@ -1,20 +1,19 @@
-let string = "(()())"
-let count = 0
-for(let i=0;i<string.length-1;i++){
-    if(string[i]==="("){
-        if(string[i+1]===")"){
-            count += 2
+function longestParentheses(string){
+    let newArray = [-1]
+    let maxLen = 0
+    for(let i=0;i<string.length;i++){
+        if(string[i]==='('){
+            newArray.push(i)
+        }
+        else{
+            let top = newArray.pop()
+            if(newArray.length !==0){
+                maxLen = Math.max(maxLen, i-newArray[newArray.length-1])
+            }
         }
     }
+    return maxLen
 }
-console.log(count) // 2
-// or 
-let counting = 0
-for(let i=0;i<string.length-1;i++){
-    if(string[i]==="("){
-        if(string.includes(")")){
-            counting += 1
-        }
-    }
-}
-console.log(counting) //2
+let string = "(())()"
+let result = longestParentheses(string)
+console.log(result)
