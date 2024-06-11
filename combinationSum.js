@@ -16,15 +16,16 @@ for(let i=0;i<array.length+1;i++){
 }
 console.log(newArray)
 let output = []
-let length = newArray.length
-for(let i=0;i<length;i++){
-    for(let j=1;j<length;j++){
-        let combination = newArray.slice(i,j+1)
-        let sum = combination.reduce((acc,curr)=>acc+curr,0)
+for(let i=0;i<newArray.length;i++){
+    let subArrays = newArray.slice(0,i+1)
+    // console.log(subArrays)
+    for(let j=0;j<subArrays.length;j++){
+        let allPossibles = subArrays.slice(j,subArrays.length)
+        let sum = allPossibles.reduce((acc,curr)=>acc+curr,0)
         if(sum === target){
-            output.push(combination)
+            output.push(allPossibles)
         }
-    }
-    
+    } 
 }
+
 console.log(output)

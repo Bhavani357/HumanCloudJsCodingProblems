@@ -1,13 +1,11 @@
 let text = "abkdablkjsablisababaaaaaa";
 let dict = {}
 for(let j of text){
-    let count = 0
-    for(let k of text){
-        if (j===k){
-            count += 1
-        }
+    if(dict[j]===undefined){
+        dict[j] = 1
+    }else{
+        dict[j] = dict[j]+1
     }
-    dict[j] = count
 }
 let maxCount = 0
 let resultString = ''

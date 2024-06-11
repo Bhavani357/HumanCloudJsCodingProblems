@@ -9,5 +9,7 @@ for(let letter of word1){
         newWord1 += letter
     }
 }
-console.log(newWord1)
-console.log(count)
+// console.log(newWord1)
+// console.log(count)
+
+

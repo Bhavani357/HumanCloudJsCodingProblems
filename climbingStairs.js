@@ -1,4 +1,4 @@
-const n = 5;
+const n = 7;
 
 function findingNoOfWays(n){
     if (n <= 1) return 1; // if n=0 standing on a ground do nothing one way, n=1 to reach the first step on.of ways are only one

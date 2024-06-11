@@ -1,30 +1,16 @@
-let array = [1,1,1,2,1,1,1]
 
-// let max = Math.max(...array)
-// let maxNumIndex = array.indexOf(max)
-// console.log(maxNumIndex)
-// console.log(max)
-let count = 0
-for(let i=1;i<array.length;i++){
-    if(array[i-1]===array[i]){
-        count += 1
+function findHeavyBall(array){
+    let group1 = array.slice(0,3)
+    let group2 = array.slice(3,6)
+    let group3 = array.slice(6,8)
+    console.log(group1,group2,group3)
+    function findSum(data){
+        return data.reduce((acc,curr)=>acc+curr,0)
     }
-    else{
-        break
-    }
+    let sumOfGroups = findSum(group1)
+    console.log(sumOfGroups)
 }
-console.log(count)
 
+let array = [1,1,1,2,1,1,1]
+let result = findHeavyBall(array)
 
-// 1 1 1 2    1 1 1 1
-// 1 1  1 2
-// 1  2
-
-// -----------------
-// 1 1 1   2 1 1  1 1
-// 2 1 1   1 1 1
-// 2 1 1
-// 2 1  1
-
-// 2  1
-// 2

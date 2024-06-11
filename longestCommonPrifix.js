@@ -1,4 +1,4 @@
-let array = ['flower','flaowght','fqlow']
+let array = ['flower','flaowght','flqlow']
 let smallest_len = Infinity
 for(let i of array){
     if(i.length < smallest_len){
